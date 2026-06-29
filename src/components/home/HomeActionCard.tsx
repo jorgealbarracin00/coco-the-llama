@@ -1,7 +1,7 @@
-
+import Image from "next/image";
 
 type HomeActionCardProps = {
-  icon: string;
+  image: string;
   title: string;
   subtitle: string;
   active?: boolean;
@@ -9,7 +9,7 @@ type HomeActionCardProps = {
 };
 
 export function HomeActionCard({
-  icon,
+  image,
   title,
   subtitle,
   active = false,
@@ -25,9 +25,15 @@ export function HomeActionCard({
           : "border-[#eedfd5] bg-white hover:bg-[#fffaf8]"
       }`}
     >
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-4xl shadow-sm">
-        {icon}
-      </div>
+      <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-sm">
+     <Image
+      src={image}
+        alt={title}
+       width={80}
+        height={80}
+        className="h-full w-full object-cover"
+    />
+    </div>
 
       <div className="min-w-0 flex-1">
         <h3 className="text-lg font-black text-[#321f17]">{title}</h3>

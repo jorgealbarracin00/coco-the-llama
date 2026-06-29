@@ -13,25 +13,25 @@ export const hero = {
 
 export const actionCards = [
   {
-    icon: "👨‍👧",
+    image: "/images/home1.avif",
     title: "I'm a lost dad 😅",
     subtitle: "Help me find something amazing!",
     active: true,
   },
   {
-    icon: "👩‍🍼",
+    image: "/images/home2.avif",
     title: "I'm a picky mum 💖",
     subtitle: "Only the best will do!",
     active: false,
   },
   {
-    icon: "🎁",
+    image: "/images/home3.avif",
     title: "I need a gift 🎀",
     subtitle: "Make someone happy!",
     active: false,
   },
   {
-    icon: "💡",
+    image: "/images/home4.avif",
     title: "Just browsing ✨",
     subtitle: "Show me inspiration",
     active: false,

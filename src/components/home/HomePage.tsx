@@ -30,11 +30,11 @@ export function HomePage() {
         <section className="mt-6 space-y-3">
           {actionCards.map((card) => (
             <HomeActionCard
-              key={card.title}
-              icon={card.icon}
-              title={card.title}
-              subtitle={card.subtitle}
-              active={card.active}
+            key={card.title}
+            image={card.image}
+            title={card.title}
+            subtitle={card.subtitle}
+            active={card.active}
             />
           ))}
         </section>
