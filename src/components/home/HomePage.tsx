@@ -1,11 +1,21 @@
+"use client";
+
 import { actionCards, bottomNavigation, homeHeader, trustItems } from "@/data/homeMock";
+import { useState } from "react";
 import { BottomNav } from "./BottomNav";
 import { HeroSection } from "./HeroSection";
 import { HomeActionCard } from "./HomeActionCard";
 import { HomeHeader } from "./HomeHeader";
+import { LostDadHelperView } from "./LostDadHelperView";
 import { TrustBar } from "./TrustBar";
 
 export function HomePage() {
+  const [activeView, setActiveView] = useState<"home" | "lostDad">("home");
+
+  if (activeView === "lostDad") {
+    return <LostDadHelperView />;
+  }
+
   return (
     <main className="min-h-screen bg-[#fff7ef] text-[#321f17]">
       <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 pb-6 pt-8">
@@ -30,11 +40,16 @@ export function HomePage() {
         <section className="mt-6 space-y-3">
           {actionCards.map((card) => (
             <HomeActionCard
-            key={card.title}
-            image={card.image}
-            title={card.title}
-            subtitle={card.subtitle}
-            active={card.active}
+              key={card.title}
+              image={card.image}
+              title={card.title}
+              subtitle={card.subtitle}
+              active={card.active}
+              onClick={() => {
+                if (card.title.includes("lost dad")) {
+                  setActiveView("lostDad");
+                }
+              }}
             />
           ))}
         </section>
