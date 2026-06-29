@@ -13,8 +13,12 @@ export function HomePage() {
   const [activeView, setActiveView] = useState<"home" | "lostDad">("home");
 
   if (activeView === "lostDad") {
-    return <LostDadHelperView />;
-  }
+  return (
+    <LostDadHelperView
+      onBack={() => setActiveView("home")}
+    />
+  );
+}
 
   return (
     <main className="min-h-screen bg-[#fff7ef] text-[#321f17]">

@@ -59,15 +59,21 @@ function LostDadOption({ image, label }: LostDadOptionProps) {
   );
 }
 
-export function LostDadHelperView() {
-  return (
+type LostDadHelperViewProps = {
+  onBack: () => void;
+};
+
+export function LostDadHelperView({ onBack }: LostDadHelperViewProps) {
+return (
     <main className="min-h-screen bg-[#fff7ef] text-[#321f17]">
       <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-8 pt-6">
         <header className="flex items-center justify-between">
           <button
-            type="button"
-            className="flex items-center gap-2 text-lg font-bold text-[#ff6f8f] active:scale-95"
-          >
+            <button
+  type="button"
+  onClick={onBack}
+  className="flex items-center gap-2 text-lg font-bold text-[#ff6f8f] active:scale-95"
+>
             <span className="text-3xl">‹</span>
             Back
           </button>
