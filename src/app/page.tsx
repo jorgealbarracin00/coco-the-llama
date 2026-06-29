@@ -1,12 +1,15 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white text-slate-900">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold">Coco The Llama</h1>
-        <p className="mt-4 text-lg text-slate-600">
-          Hello world. The llama is awake.
-        </p>
-      </div>
+    <main className="relative h-screen w-screen overflow-hidden bg-black">
+      <Image
+        src="/splash/coco.avif"
+        alt="Coco The Llama"
+        fill
+        priority
+        className="object-cover"
+      />
     </main>
   );
 }
