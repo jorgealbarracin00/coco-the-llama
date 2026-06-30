@@ -7,13 +7,18 @@ import { HeroSection } from "./HeroSection";
 import { HomeActionCard } from "./HomeActionCard";
 import { HomeHeader } from "./HomeHeader";
 import { LostDadHelperView } from "./LostDadHelperView";
+import { PickyMumView } from "./PickyMumView";
 import { TrustBar } from "./TrustBar";
 
 export function HomePage() {
-  const [activeView, setActiveView] = useState<"home" | "lostDad">("home");
+  const [activeView, setActiveView] = useState<"home" | "lostDad" | "pickyMum">("home");
 
   if (activeView === "lostDad") {
     return <LostDadHelperView onBack={() => setActiveView("home")} />;
+  }
+
+  if (activeView === "pickyMum") {
+    return <PickyMumView onBack={() => setActiveView("home")} />;
   }
 
   return (
@@ -48,6 +53,10 @@ export function HomePage() {
               onClick={() => {
                 if (card.title.includes("lost dad")) {
                   setActiveView("lostDad");
+                }
+
+                if (card.title.includes("picky mum")) {
+                  setActiveView("pickyMum");
                 }
               }}
             />
