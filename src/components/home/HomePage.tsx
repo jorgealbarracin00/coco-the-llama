@@ -23,7 +23,7 @@ export function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#fff7ef] text-[#321f17]">
-      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 pb-6 pt-8">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 pb-32 pt-8">
         <HomeHeader cartCount={homeHeader.cartCount} />
 
         <section className="mt-10 text-center">
@@ -67,8 +67,10 @@ export function HomePage() {
           <TrustBar items={trustItems} />
         </div>
 
-        <div className="mt-auto pt-6">
-          <BottomNav selectedIndex={bottomNavigation.selectedIndex} />
+        <div className="fixed inset-x-0 bottom-0 z-40 px-5 pb-[calc(env(safe-area-inset-bottom)+12px)]">
+          <div className="mx-auto max-w-md">
+            <BottomNav selectedIndex={bottomNavigation.selectedIndex} />
+          </div>
         </div>
       </div>
     </main>
