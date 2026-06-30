@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BottomNav } from "./BottomNav";
 
 const audienceOptions = [
   {
@@ -64,7 +65,7 @@ type LostDadHelperViewProps = {
 export function LostDadHelperView({ onBack }: LostDadHelperViewProps) {
   return (
     <main className="min-h-screen bg-[#fff7ef] text-[#321f17]">
-      <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-8 pt-6">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-32 pt-6">
         <header className="flex items-center justify-between">
           <button
             type="button"
@@ -170,6 +171,12 @@ export function LostDadHelperView({ onBack }: LostDadHelperViewProps) {
         <p className="mt-4 text-center text-sm font-semibold text-[#8a746b]">
           🔒 We only show dad-friendly options
         </p>
+
+        <div className="fixed inset-x-0 bottom-0 z-40 px-5 pb-[calc(env(safe-area-inset-bottom)+12px)]">
+          <div className="mx-auto max-w-md">
+            <BottomNav selectedIndex={0} />
+          </div>
+        </div>
       </div>
     </main>
   );
